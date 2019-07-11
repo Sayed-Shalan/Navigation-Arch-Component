@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstFragment">
+
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.sayed.navcomponentapp.ui.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action android:id="@+id/first_to_second"
+            app:destination="@id/secondFragment"/>
+        <action android:id="@+id/first_to_third"
+            app:destination="@id/thirdFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.sayed.navcomponentapp.ui.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second">
+        <action android:id="@+id/second_to_third"
+            app:destination="@id/thirdFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.sayed.navcomponentapp.ui.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" >
+        <action android:id="@+id/third_to_four"
+            app:destination="@id/fourthFragment"/>
+        <argument android:name="my_data"
+            android:defaultValue="hey"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="com.sayed.navcomponentapp.ui.FourthFragment"
+        android:label="fragment_fourth"
+        tools:layout="@layout/fragment_fourth" >
+        <action
+            android:id="@+id/action_fourthFragment_to_main2Activity"
+            app:destination="@id/main2Activity" />
+    </fragment>
+    <activity
+        android:id="@+id/main2Activity"
+        android:name="com.sayed.navcomponentapp.ui.Main2Activity"
+        android:label="activity_main2"
+        tools:layout="@layout/activity_main2" />
+</navigation>
